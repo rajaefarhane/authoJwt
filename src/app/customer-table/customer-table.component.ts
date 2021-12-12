@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class CustomerTableComponent implements OnInit {
 
   constructor() { }
-
+ CreatCustomerForm(){
+   
+ }
   ngOnInit(): void {
   }
 
