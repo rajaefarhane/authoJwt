@@ -10,16 +10,20 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
+import {environment} from '../environments/environment'
 @NgModule({
   declarations: [
     AppComponent,
     CreatCustomerComponent,
     CustomerTableComponent
-    
-   
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
