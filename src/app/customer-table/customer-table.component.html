@@ -13,60 +13,41 @@
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
-                <th >
-                  S.no
+                <th *ngFor="let Header of Headers">
+                 {{Header}}
                 </th>
-                <th >
-                  Username
-                </th>
-                <th >
-                  Firstname
-                </th>
-                <th >
-                  Lastname
-                </th>
-                <th >
-                  Email
-                </th>
-                <th >
-                  Adress
-                </th>
-                 <th >
-                  Postal code
-                </th>
-                <th >
-                  Country
-                </th>
+               
                 </thead>
                 <tbody>
-                <tr >
+                <tr *ngFor="let data of tableData, let i=index">
                   <td>
-                    <span>1</span>
+                    <span>{{i}}</span>
                   </td>
                   <td>
-                    <span>rajae</span>
+                    <span>{{data.userName}}</span>
                   </td>
                   <td>
-                    <span>rajae</span>
+                    <span>{{data.lastName}}</span>
                   </td>
                   <td>
-                    <span>farhane</span>
+                    <span>{{data.email}}</span>
                   </td>
                   <td>
-                    <span>rajae19beddi@gmail.com</span>
+                    <span>{{data.city}}</span>
                   </td>
                   <td>
-                    <span>9 rue jean giraudoux </span>
+                    <span>{{data.address}}</span>
                   </td>
                   <td>
-                    <span>21850</span>
+                    <span>{{data.country}}</span>
                   </td>
                   <td>
-                    <span>France</span>
+                    <span>{{data.postalcode}}</span>
                   </td>
+                
                   <td>
-                    <button style="margin: 10px"  type="button" class="btn btn-danger">Delete</button>
-                    <button   type="button" class="btn btn-secondary">Edit</button>
+                    <button style="margin: 10px"  type="button" class="btn btn-danger" >Delete</button>
+                    <button   type="button" class="btn btn-secondary" (click)='UpdateCustomers()'>Edit</button>
                   </td>
                 </tr>
                 </tbody>

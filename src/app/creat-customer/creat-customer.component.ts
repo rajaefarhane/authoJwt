@@ -4,6 +4,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {FormControl, FormGroup} from '@angular/forms';
 import{FirebaseService} from '../shared/firebase.service';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-creat-customer',
   templateUrl: './creat-customer.component.html',
@@ -23,7 +24,7 @@ export class CreatCustomerComponent implements OnInit {
     postalcode: new FormControl(''),
     lastName: new FormControl('')
   })
-  constructor(public FirebaseService: FirebaseService) { }
+  constructor(public FirebaseService: FirebaseService,    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,10 @@ export class CreatCustomerComponent implements OnInit {
     //console.log(this.customerForm.value); afficher la valeur de champs input dans la console
   this.FirebaseService.CreateFunctionLity(this.customerForm.value);
   }
+  destCustomers(){
+  
+    this.router.navigate(['/liste-students']);
+}
 
 }
 
